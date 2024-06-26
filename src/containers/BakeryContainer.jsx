@@ -14,11 +14,15 @@ const BakeryContainer = () => {
         <>
             <h2>Cakes:</h2>
             <hr />
-            <CakeComponent name = {"Victoria Sponge"} ingredients = {["eggs", "butter", "sugar", "self-raising flour", "baking powder", "milk"]} price = {victoriaSpongePrice} rating = {victoriaSpongeRating} />
+            <section className="cake">
+                <CakeComponent name = {"Victoria Sponge"} ingredients = {["eggs", "butter", "sugar", "self-raising flour", "baking powder", "milk"]} price = {victoriaSpongePrice} rating = {victoriaSpongeRating} />
 
-            <CakeComponent name = {"Tea Loaf"} ingredients = {["eggs", "oil", "dried fruit", "sugar", "self-raising flour", "strong tea"]} price = {teaLoafPrice} rating = {teaLoafRating} />
+                <CakeComponent name = {"Tea Loaf"} ingredients = {["eggs", "oil", "dried fruit", "sugar", "self-raising flour", "strong tea"]} price = {teaLoafPrice} rating = {teaLoafRating} />
 
-            <CakeComponent name = {"Carrot Cake"} ingredients = {["carrots", "walnuts", "oil", "cream cheese", "flour", "sugar"]} price = {carrotCakePrice} rating = {carrotCakeRating} />
+                <CakeComponent name = {"Carrot Cake"} ingredients = {["carrots", "walnuts", "oil", "cream cheese", "flour", "sugar"]} price = {carrotCakePrice} rating = {carrotCakeRating} />
+            </section>
+            <hr />
+            
 
             <p>Average rating: {averageRating.toFixed(1)}</p>
         </>

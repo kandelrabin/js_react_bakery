@@ -10,6 +10,12 @@ h2 {
   color: black;
 }
 
+.cake {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
 #victoria-sponge {
   background-color: #678ac2;
 }
