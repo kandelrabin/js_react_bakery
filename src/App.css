@@ -29,6 +29,14 @@ h2 {
   background-color: #ec7063;
 }
 
+#quantity {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  size: 30%;
+  margin: 5%;
+}
+
 
 
 
