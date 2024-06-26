@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <h1>Bakery</h1>
-    <BakeryContainer />
+    <BakeryContainer id="bakery-container"/>
     </>
   )
 }

@@ -1,3 +1,33 @@
+body {
+  background-color: #F0D5B5;
+}
+
+h1 {
+  color: #5F2B18;
+}
+
+h2 {
+  color: black;
+}
+
+#victoria-sponge {
+  background-color: #678ac2;
+}
+
+
+#tea-loaf {
+  background-color: #e8647c;
+}
+
+#carrot-cake {
+  background-color: #ec7063;
+}
+
+
+
+
+
+/* default */
 #root {
   max-width: 1280px;
   margin: 0 auto;
