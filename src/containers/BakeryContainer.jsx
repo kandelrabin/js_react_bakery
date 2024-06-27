@@ -2,13 +2,57 @@ import CakeComponent from "../components/CakeComponent";
 import { useState } from "react";
 
 const BakeryContainer = () => {
-    const victoriaSpongePrice = 5;
-    const victoriaSpongeRating = 5;
-    const teaLoafPrice = 2;
-    const teaLoafRating = 3;
-    const carrotCakePrice = 8;
-    const carrotCakeRating = 1;
-    const averageRating = ((victoriaSpongeRating + teaLoafRating + carrotCakeRating) / 3);
+    
+    const [cakes, setCakes] = useState(
+        [
+            // Victora Sponge
+            {
+                cakeName: "Victoria Sponge",
+                   ingredients: [
+                       "eggs",
+                      "butter",
+                      "sugar",
+                          "self-raising flour",
+                      "baking powder",
+                      "milk"
+                  ],
+                  price: 5,
+                    rating: 5
+            },
+        
+            // Tea Loaf
+            {
+                 cakeName: "Tea Loaf",
+                   ingredients: [
+                       "eggs",
+                      "oil",
+                      "dried fruit",
+                          "sugar",
+                      "self-raising flour",
+                      "strong tea",
+                  ],
+                  price: 2,
+                  rating: 3
+            },
+        
+            // Carrot Cake
+            {
+                 cakeName: "Carrot Cake",
+                   ingredients: [
+                        "carrots",
+                          "walnuts",
+                      "oil",
+                          "cream cheese",
+                          "flour",
+                      "sugar",
+                   ],
+                   price: 8,
+                   rating: 5
+            }
+        ] 
+    );
+    
+    const averageRating = ((cakes[0].rating + cakes[1].rating + cakes[2].rating) / 3);
 
     const [victoriaSpongeCounter, setvictoriaSpongeCounter] = useState(0);
     const [teaLoafCounter, setTeaLoafCounter] = useState(0);
@@ -20,11 +64,11 @@ const BakeryContainer = () => {
             <h2>Cakes:</h2>
             <hr />
             <section className="cake">
-                <CakeComponent name = {"Victoria Sponge"} ingredients = {["eggs", "butter", "sugar", "self-raising flour", "baking powder", "milk"]} price = {victoriaSpongePrice} rating = {victoriaSpongeRating} quantity = {victoriaSpongeCounter} countClick = {setvictoriaSpongeCounter} totalValue = {totalValue} sellClick = {setTotalValue}/>
+                <CakeComponent cake = {cakes[0]} quantity = {victoriaSpongeCounter} countClick = {setvictoriaSpongeCounter} totalValue = {totalValue} sellClick = {setTotalValue}/>
 
-                <CakeComponent name = {"Tea Loaf"} ingredients = {["eggs", "oil", "dried fruit", "sugar", "self-raising flour", "strong tea"]} price = {teaLoafPrice} rating = {teaLoafRating} quantity = {teaLoafCounter} countClick={setTeaLoafCounter} totalValue = {totalValue} sellClick = {setTotalValue}/>
+                <CakeComponent cake = {cakes[1]} quantity = {teaLoafCounter} countClick={setTeaLoafCounter} totalValue = {totalValue} sellClick = {setTotalValue}/>
 
-                <CakeComponent name = {"Carrot Cake"} ingredients = {["carrots", "walnuts", "oil", "cream cheese", "flour", "sugar"]} price = {carrotCakePrice} rating = {carrotCakeRating} quantity={carrotCakeCounter} countClick={setCarrotCakeCounter} totalValue = {totalValue} sellClick = {setTotalValue}/>
+                <CakeComponent cake = {cakes[2]} quantity={carrotCakeCounter} countClick={setCarrotCakeCounter} totalValue = {totalValue} sellClick = {setTotalValue}/>
             </section>
             <hr />
             

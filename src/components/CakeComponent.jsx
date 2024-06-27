@@ -1,5 +1,5 @@
-const CakeComponent = ({name, ingredients, price, rating, quantity, countClick, totalValue, sellClick}) => {
-    const cakeId = name.toLowerCase().replace(" ", "-");
+const CakeComponent = ({cake, quantity, countClick, totalValue, sellClick}) => {
+    const cakeId = cake.cakeName.toLowerCase().replace(" ", "-");
 
     const handleAddCountClick = () => {
         countClick(quantity + 1);
@@ -11,16 +11,16 @@ const CakeComponent = ({name, ingredients, price, rating, quantity, countClick, 
     }
 
     const handleSaleClick = () => {
-        sellClick(totalValue + quantity * price);
-        console.log("sell price :"+totalValue + quantity * price);
+        sellClick(totalValue + quantity * cake.price);
+        console.log("sell price :"+totalValue + quantity * cake.price);
     }
 
     return (
         <div id={cakeId}>
-            <h3>{name}</h3>
-            <p>Ingredients: {ingredients.join(", ")}</p>
-            <p>Price: £{price.toFixed(2)}</p>
-            <p>Rating: {rating.toFixed(1)}</p>
+            <h3>{cake.cakeName}</h3>
+            <p>Ingredients: {cake.ingredients.join(", ")}</p>
+            <p>Price: £{cake.price.toFixed(2)}</p>
+            <p>Rating: {cake.rating.toFixed(1)}</p>
             <div id="quantity">
                 <p>Quantity:{"  "+quantity}</p>
                 <button onClick={handleAddCountClick}>+</button>
